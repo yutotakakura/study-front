@@ -31,8 +31,10 @@ module.exports = {
       }
     ],
   },
-  // これを定義しないと import 文で拡張子を書く必要が生まれる。
   resolve: {
+    // これを指定しないと、node_moduleが見つからないとエラーが出る。
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    // これを定義しないと import 文で拡張子を書く必要が生まれる。
     extensions: [
       '.ts', '.tsx', '.js', 'jsx',
     ]
