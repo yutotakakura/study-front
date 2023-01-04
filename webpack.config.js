@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         use: [
           {
             loader: "babel-loader",
@@ -25,6 +25,16 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader'
+      }
     ],
   },
+  // これを定義しないと import 文で拡張子を書く必要が生まれる。
+  resolve: {
+    extensions: [
+      '.ts', '.tsx', '.js', 'jsx',
+    ]
+  }
 };
