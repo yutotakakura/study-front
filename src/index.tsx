@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Article, Counter, TextInput, ToggleButton } from "./components";
 
 const App = () => {
+  const [id, setId] = useState('yutotakakura')
+
+  const ids = ['deatiger', 'aws', 'google']
+  const getrandomId = () => {
+    const _id = ids[Math.floor(Math.random() * ids.length)]
+    setId(_id)
+  }
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [id])
   return (
     <div>
       <Article
@@ -12,6 +30,8 @@ const App = () => {
       <TextInput />
       <Counter />
       <ToggleButton />
+      <p>{id}</p>
+      <button onClick={() => getrandomId()}>idを変更</button>
     </div>
   )
 }
