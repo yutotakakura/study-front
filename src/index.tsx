@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { Article, Counter, TextInput, ToggleButton } from "./components";
+import { Article, Counter, MyModal, TextInput, ToggleButton } from "./components";
 
 const App = () => {
   const [id, setId] = useState('yutotakakura')
@@ -32,6 +32,7 @@ const App = () => {
       <ToggleButton />
       <p>{id}</p>
       <button className="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2" onClick={() => getrandomId()}>idを変更</button>
+      <MyModal title={'モーダルタイトル'} content={'モーダルの内容'} button={'閉じる'} />
     </div>
   )
 }
