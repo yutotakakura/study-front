@@ -31,7 +31,7 @@ const App = () => {
       <Counter />
       <ToggleButton />
       <p>{id}</p>
-      <button onClick={() => getrandomId()}>idを変更</button>
+      <button className="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2" onClick={() => getrandomId()}>idを変更</button>
     </div>
   )
 }

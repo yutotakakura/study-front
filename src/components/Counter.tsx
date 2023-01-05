@@ -31,8 +31,8 @@ const Counter = () => {
   return (
     <div>
       <p>現在のカウント数: {count}</p>
-      <button onClick={countUp}>up</button>
-      <button onClick={countDown}>down</button>
+      <button className="bg-green-500 hover:bg-green-400 text-white rounded px-4 py-2 mr-4"onClick={countUp}>up</button>
+      <button className="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"onClick={countDown}>down</button>
     </div>
   )
 }
