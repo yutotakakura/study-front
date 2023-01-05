@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Content, PublishButton, Title } from "./index"
+import { Counter, Content, PublishButton, TextInput, Title } from "./index"
 
 // propsは引数のようにコンポーネントに渡される値
 // コンポーネント内で更新はできない
