@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   resolve: {
-    // これを指定しないと、node_moduleが見つからないとエラーが出る。
+    // これを指定しないと、srcディレクトリ配下のファイルでnode_moduleが見つからないとエラーが出る。
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     // これを定義しないと import 文で拡張子を書く必要が生まれる。
     extensions: [

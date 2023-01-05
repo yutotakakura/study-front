@@ -1,3 +1,5 @@
+import { Content, Title } from "./index"
+
 type ArticleProps = {
   title: string
   content: string
@@ -6,8 +8,8 @@ type ArticleProps = {
 const Article = (props: ArticleProps) => {
   return (
     <div>
-      <h2>{props.title}</h2>
-      <p>{props.content}</p>
+      <Title title={props.title}/>
+      <Content content={props.content} />
     </div>
   )
 }
